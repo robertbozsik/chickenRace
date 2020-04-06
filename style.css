@@ -1,0 +1,10 @@
+body {
+  background-image: url("./assets/main_background/background_farm.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
