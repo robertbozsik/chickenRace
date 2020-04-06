@@ -7,12 +7,12 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(800, 600);
+  createCanvas(800, 450);
   game.setup();
 }
 
 function draw() {
-  frameRate(40);
+  frameRate(60);
   game.display();
 }
 

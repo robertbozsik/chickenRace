@@ -10,8 +10,8 @@ class Player {
   setup() {
     this.height = this.img.height;
     this.width = this.img.width;
-    this.x = 300;
-    this.y = 20;
+    this.x = 100;
+    this.y = 292;
     console.log("player setup is done");
   }
 
@@ -25,6 +25,6 @@ class Player {
     if (this.y > height - this.height) {
       this.y = height - this.height;
     }
-    image(this.img, this.x, this.y);
+    image(this.img, this.x, this.y); // this.x, this.y);
   }
 }
