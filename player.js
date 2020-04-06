@@ -2,7 +2,7 @@ console.log("hello from the player");
 
 class Player {
   constructor() {
-    this.img = loadImage("./assets/chicken/chicken_01 copy.png");
+    this.img = loadImage("./assets/chicken/chicken.gif");
     this.gravity = 0.2;
     this.speed = 0;
   }
@@ -22,9 +22,17 @@ class Player {
   display() {
     this.speed += this.gravity;
     this.y += this.speed;
-    if (this.y > height - this.height) {
-      this.y = height - this.height;
+
+    // if (this.y > height - this.height) {
+    //     this.y = height - this.height;
+    // }
+
+    /* new */
+    if (this.y >= 292) {
+      this.y = 292;
     }
-    image(this.img, this.x, this.y); // this.x, this.y);
+    /* new */
+
+    image(this.img, this.x, this.y);
   }
 }

@@ -2,7 +2,7 @@ console.log("hello from the background");
 
 class Background {
   constructor() {
-    this.random = 0; // what is this?
+    //this.random = 0; // what is this? Do I need this line?
     this.imgs = [
       {
         src: loadImage("./assets/background2/layer_01_1920 x 1080.png"),

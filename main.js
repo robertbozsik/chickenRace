@@ -7,19 +7,19 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(800, 450);
   game.setup();
+  createCanvas(800, 450);
 }
 
 function draw() {
-  frameRate(60);
   game.display();
+  frameRate(80);
 }
 
 function keyPressed() {
   let spaceBarCode = 32;
   if (keyCode === spaceBarCode) {
     game.player.jump();
-    console.log("jump for joy");
+    console.log("jump for joy!");
   }
 }

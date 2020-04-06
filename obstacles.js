@@ -2,18 +2,18 @@ console.log("hello from the obstacles");
 
 class Obstacles {
   constructor() {
-    this.height = 25;
-    this.width = 25;
+    this.width = 50;
+    this.height = 50;
     this.x = width;
     this.y = random(0, height - this.height);
   }
 
-  display() {
-    // the obstackle is for now just a red rectangle
-    rect(this.x, this.y, 25, 25);
-    fill("red");
-    this.x--;
-  }
+  // display() {
+  //   // the obstackle is for now just a red rectangle
+  //   rect(this.x, this.y, this.width, this.height);
+  //   fill("red");
+  //   this.x--;
+  // }
 
   checkCollision(player) {
     let left = this.x;
@@ -38,5 +38,29 @@ class Obstacles {
 
     let collision = xCollision && yCollision;
     return collision;
+  }
+}
+
+class Worm extends Obstacles {
+  constructor() {
+    super();
+    this.image = game.wormImage;
+  }
+
+  display() {
+    image(this.image, this.x, this.y, this.width, this.height);
+    this.x--;
+  }
+}
+
+class Fox extends Obstacles {
+  constructor() {
+    super();
+    this.image = game.foxImage;
+  }
+
+  display() {
+    image(this.image, this.x, this.y, this.width, this.height);
+    this.x--;
   }
 }
