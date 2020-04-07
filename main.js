@@ -13,7 +13,7 @@ function setup() {
 
 function draw() {
   game.display();
-  frameRate(80);
+  frameRate(100);
 }
 
 // function keyPressed() {

@@ -2,7 +2,11 @@ body {
   /* background-image: url("./assets/main_background/background_farm.jpeg");
   background-position: center;
   background-size: cover; */
-  background-color: coral;
+
+  font: 200 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #40332b;
+  margin: 0;
+  background-color: #fbc9a9;
 
   /* new */
   margin: 0;
@@ -14,6 +18,5 @@ body {
 }
 
 h1 {
-  color: black;
   text-align: center;
 }
