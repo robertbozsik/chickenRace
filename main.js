@@ -16,10 +16,18 @@ function draw() {
   frameRate(80);
 }
 
+// function keyPressed() {
+//   let spaceBarCode = 32;
+//   if (keyCode === spaceBarCode) {
+//     game.player.jump();
+//     console.log("jump for joy!");
+//   }
+// }
+
 function keyPressed() {
   let spaceBarCode = 32;
   if (keyCode === spaceBarCode) {
-    game.player.jump();
-    console.log("jump for joy!");
+    game.chicken.jump();
+    console.log("jump chicken, jump!");
   }
 }

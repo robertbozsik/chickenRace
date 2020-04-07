@@ -44,23 +44,25 @@ class Obstacles {
 class Worm extends Obstacles {
   constructor() {
     super();
-    this.image = game.wormImage;
+    //this.image = game.wormImage;
+    this.image = loadImage("./assets/worm/worm.png");
   }
 
   display() {
     image(this.image, this.x, this.y, this.width, this.height);
-    this.x--;
+    this.x -= 2; // the higher the number the faster the worm
   }
 }
 
 class Fox extends Obstacles {
   constructor() {
     super();
-    this.image = game.foxImage;
+    // this.image = game.foxImage;
+    this.image = loadImage("./assets/fox/fox.png");
   }
 
   display() {
     image(this.image, this.x, this.y, this.width, this.height);
-    this.x--;
+    this.x -= 6; // the higher the number the faster the fox
   }
 }

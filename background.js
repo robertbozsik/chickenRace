@@ -2,7 +2,8 @@ console.log("hello from the background");
 
 class Background {
   constructor() {
-    //this.random = 0; // what is this? Do I need this line?
+    // this.random = 0; // what is this? Do I need this line?
+    // loadImage is a p5.js method
     this.imgs = [
       {
         src: loadImage("./assets/background2/layer_01_1920 x 1080.png"),

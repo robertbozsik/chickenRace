@@ -12,21 +12,25 @@ class Game {
 
   initialize() {
     this.background = new Background();
-    this.player = new Player();
+    // this.player = new Player();
+    this.chicken = new Chicken();
+    // worms and foxes will be initialized some seconds later!
     /* new */
-    this.wormImage = loadImage("./assets/worm/worm.png");
-    this.foxImage = loadImage("./assets/fox/fox.png");
+    // this.wormImage = loadImage("./assets/worm/worm.png");
+    // this.foxImage = loadImage("./assets/fox/fox.png");
     /* new */
   }
 
   setup() {
-    this.player.setup();
+    // this.player.setup();
+    this.chicken.setup();
   }
 
   display() {
     clear();
     this.background.display();
-    this.player.display();
+    // this.player.display();
+    this.chicken.display();
 
     // // displaying the obstackles
     // if (frameCount % 80 === 0) {
@@ -41,8 +45,9 @@ class Game {
     //   return !obstacle.checkCollision(this.player);
     // });
 
-    /* new displaying new worms*/
-    if (frameCount % 80 === 0) {
+    /* new displaying new worms */
+    if (frameCount % 160 === 0) {
+      // the higher the numer the less worms we have
       this.worms.push(new Worm());
     }
 
@@ -50,13 +55,17 @@ class Game {
       worm.display();
     });
 
+    // this.worms = this.worms.filter((worm) => {
+    //   return !worm.checkCollision(this.player);
+    // });
     this.worms = this.worms.filter((worm) => {
-      return !worm.checkCollision(this.player);
+      return !worm.checkCollision(this.chicken);
     });
     /* new */
 
     /* new displaying new foxes*/
     if (frameCount % 80 === 0) {
+      // the higher the numer the less worms we have
       this.foxes.push(new Fox());
     }
 
@@ -64,8 +73,11 @@ class Game {
       fox.display();
     });
 
+    // this.foxes = this.foxes.filter((fox) => {
+    //   return !fox.checkCollision(this.player);
+    // });
     this.foxes = this.foxes.filter((fox) => {
-      return !fox.checkCollision(this.player);
+      return !fox.checkCollision(this.chicken);
     });
     /* new */
   }
