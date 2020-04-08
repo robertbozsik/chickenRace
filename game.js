@@ -80,5 +80,10 @@ class Game {
       return true;
     });
     console.log(this.life);
+
+    // game over
+    if (this.life <= 0) {
+      this.finished = true;
+    }
   }
 }
