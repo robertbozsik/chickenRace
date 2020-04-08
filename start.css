@@ -9,7 +9,7 @@ span {
 }
 
 .mainFlex {
-  border: 5px solid #806655;
+  /* border: 5px solid #806655; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -27,6 +27,10 @@ span {
   justify-content: center;
 }
 
+img {
+  width: 800px;
+}
+
 .text {
   border: 5px solid #806655;
   color: #40332b;
@@ -37,4 +41,12 @@ span {
   justify-content: center;
   width: 325px;
   height: 450px;
+}
+
+#enter {
+  font-size: 1.5rem;
+}
+
+#space {
+  font-size: 1.5rem;
 }

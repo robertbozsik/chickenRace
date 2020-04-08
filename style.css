@@ -7,16 +7,31 @@ body {
   color: #40332b;
   margin: 0;
   background-color: #fbc9a9;
-
-  /* new */
-  margin: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
-  /* new */
+  height: 100vh; /* this is very important for centering the content vertically */
 }
 
 h1 {
   text-align: center;
+}
+
+#defaultCanvas0 {
+  border-top: 5px solid #806655;
+  border-bottom: 5px solid #806655;
+  border-left: 5px solid #806655;
+}
+
+.text {
+  border: 5px solid #806655;
+  color: #40332b;
+  text-align: center;
+  padding: 0 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 325px;
+  height: 450px;
 }
