@@ -58,6 +58,8 @@ class Game {
     // this.worms = this.worms.filter((worm) => {
     //   return !worm.checkCollision(this.player);
     // });
+    // worm collision with the chicken
+
     this.worms = this.worms.filter((worm) => {
       return !worm.checkCollision(this.chicken);
     });

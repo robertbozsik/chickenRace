@@ -5,7 +5,8 @@ class Obstacles {
     this.width = 50;
     this.height = 50;
     this.x = width;
-    this.y = random(0, height - this.height);
+    // this.y = random(0, height - this.height);
+    this.y = random(70, 330); // the obstacles come only this range of the y coordinate
   }
 
   // display() {
