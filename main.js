@@ -24,13 +24,13 @@ function draw() {
     frameRate(100);
     document.querySelector(
       ".text"
-    ).innerHTML = `<h1>chickenRace</h1> <h2>score: <span id="score">${this.core}</span></h2> <h2>life: <span id="life">${this.life}</span></h2>`;
+    ).innerHTML = `<h1>chickenRace</h1> <h2>score: <span id="score">${game.score}</span></h2> <h2>life: <span id="life">${game.life}</span></h2>`;
   } else {
     image(game.finishPicture, 0, 0); // the image/picture has to be in the game.js within the initialize function!
     document.querySelector(
       ".text"
-    ).innerHTML = `<h1>GAME OVER!</h1> <p>Your score is: 10 point(s)</p> <p>Hit ENTER to play again</p>`;
-    noLoop();
+    ).innerHTML = `<h2>chickenRace</h2> <h1>GAME OVER!</h1> <p>Your score is: <span id="score">${game.score}</span> point(s)</p> <p>Hit <span id="enter">ENTER</span> to play again</p>`;
+    noLoop(); // DO I NEED THIS noLoop() HERE?
   }
 }
 
@@ -39,8 +39,11 @@ function keyPressed() {
   let enter = 13;
 
   if (keyCode === space) {
-    game.chicken.jump();
-    console.log("jump chicken, jump!");
+    if (game.chicken.jumpCount <= 1) {
+      game.chicken.jump();
+      game.chicken.jumpCount++;
+    }
+    console.log("jumpCount:", game.chicken.jumpCount);
   }
 
   if (keyCode === enter) {

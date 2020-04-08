@@ -2,9 +2,10 @@ console.log("hello from the player");
 
 class Player {
   constructor() {
-    this.img = loadImage("./assets/chicken/chicken-vektor2.gif");
+    // this.img = loadImage("./assets/chicken/chicken-vektor2.gif");
     this.gravity = 0.2;
     this.speed = 0;
+    this.jumpCount = 0;
   }
 
   setup() {
@@ -16,7 +17,7 @@ class Player {
   }
 
   jump() {
-    this.speed = -7;
+    this.speed = -7; // -7
   }
 
   display() {
@@ -30,6 +31,7 @@ class Player {
     /* new */
     if (this.y >= 300) {
       this.y = 300;
+      this.jumpCount = 0;
     }
     /* new */
 
