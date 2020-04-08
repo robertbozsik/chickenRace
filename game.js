@@ -3,84 +3,82 @@ console.log("hello from the game");
 class Game {
   constructor() {
     // LATER WE CREATE AN ARRAY SO WE CAN PUSH THE OBSTACLES RANDOMLY
-    this.obstacles = [];
-    /* new */
+    // this.obstacles = [];
     this.worms = [];
     this.foxes = [];
-    /* new */
+    this.started = false;
+    this.finished = false;
+    this.score = 0;
+    this.life = 3;
+    // this.score = document.querySelector("#score");
+    // this.life = document.querySelector("#life");
   }
 
+  // WILL BE CALLED IN function preload(){} IN main.js
   initialize() {
     this.background = new Background();
     // this.player = new Player();
     this.chicken = new Chicken();
     // worms and foxes will be initialized some seconds later!
-    /* new */
-    // this.wormImage = loadImage("./assets/worm/worm.png");
-    // this.foxImage = loadImage("./assets/fox/fox.png");
-    /* new */
+    this.startPicture = loadImage("./assets/start/startpage_2.png");
+    this.finishPicture = loadImage("./assets/gameover/fox_stole_chicken.png");
   }
 
+  // WILL BE CALLED IN function setup(){} IN main.js
   setup() {
     // this.player.setup();
     this.chicken.setup();
   }
 
+  // WILL BE CALLED IN function draw(){} IN main.js
   display() {
     clear();
     this.background.display();
     // this.player.display();
     this.chicken.display();
 
-    // // displaying the obstackles
-    // if (frameCount % 80 === 0) {
-    //   this.obstacles.push(new Obstacles());
-    // }
-
-    // this.obstacles.forEach((obstacle) => {
-    //   obstacle.display();
-    // });
-
-    // this.obstacles = this.obstacles.filter((obstacle) => {
-    //   return !obstacle.checkCollision(this.player);
-    // });
-
-    /* new displaying new worms */
+    // adding worms to the worms array after a certain time
     if (frameCount % 160 === 0) {
       // the higher the numer the less worms we have
       this.worms.push(new Worm());
     }
 
+    // displaying worms
     this.worms.forEach((worm) => {
       worm.display();
     });
 
-    // this.worms = this.worms.filter((worm) => {
-    //   return !worm.checkCollision(this.player);
-    // });
-    // worm collision with the chicken
-
+    // score increases in case of collision with a worm and the worm disappears
+    // within a filter function true means keep it, false means delet it
     this.worms = this.worms.filter((worm) => {
-      return !worm.checkCollision(this.chicken);
+      if (worm.checkCollision(this.chicken)) {
+        this.score += 1;
+        return false;
+      }
+      return true;
     });
-    /* new */
+    console.log(this.score);
 
-    /* new displaying new foxes*/
+    // adding foxes to the foxes array after a certain time
     if (frameCount % 80 === 0) {
       // the higher the numer the less worms we have
       this.foxes.push(new Fox());
     }
 
+    // displaying foxes
     this.foxes.forEach((fox) => {
       fox.display();
     });
 
-    // this.foxes = this.foxes.filter((fox) => {
-    //   return !fox.checkCollision(this.player);
-    // });
+    // life decreases in case of collision with a fox and the fox disappers
+    // within a filter function true means keep it, false means delet it
     this.foxes = this.foxes.filter((fox) => {
-      return !fox.checkCollision(this.chicken);
+      if (fox.checkCollision(this.chicken)) {
+        this.life -= 1;
+        return false;
+      }
+      return true;
     });
-    /* new */
+    console.log(this.life);
   }
 }

@@ -51,7 +51,7 @@ class Worm extends Obstacles {
 
   display() {
     image(this.image, this.x, this.y, this.width, this.height);
-    this.x -= 2; // the higher the number the faster the worm
+    this.x -= 4; // the higher the number the faster the worm
   }
 }
 
