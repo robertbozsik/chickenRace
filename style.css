@@ -15,7 +15,7 @@ span {
   flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* this is very important for centering the content vertically */
+  height: 100vh; /* this is very important for centering the content (align-items) vertically */
 }
 
 h1 {
@@ -62,4 +62,8 @@ img {
 
 #enter {
   font-size: 1.2rem;
+}
+
+.smallFont {
+  font-size: 0.7rem;
 }

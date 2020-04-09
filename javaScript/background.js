@@ -6,27 +6,27 @@ class Background {
     // loadImage is a p5.js method
     this.imgs = [
       {
-        src: loadImage("./assets/background2/layer_01_1920 x 1080.png"),
+        src: loadImage("assets/background/layer_01_800x450.png"),
         x: 0,
         speed: 0,
       },
       {
-        src: loadImage("./assets/background2/layer_02_1920 x 1080.png"),
+        src: loadImage("assets/background/layer_02_800x450.png"),
         x: 0,
         speed: 1,
       },
       {
-        src: loadImage("./assets/background2/layer_03_1920 x 1080.png"),
+        src: loadImage("assets/background/layer_03_800x450.png"),
         x: 0,
         speed: 2,
       },
       {
-        src: loadImage("./assets/background2/layer_04_1920 x 1080.png"),
+        src: loadImage("assets/background/layer_04_800x450.png"),
         x: 0,
         speed: 3,
       },
       {
-        src: loadImage("./assets/background2/layer_05_1920 x 1080.png"),
+        src: loadImage("assets/background/layer_05_800x450.png"),
         x: 0,
         speed: 4,
       },

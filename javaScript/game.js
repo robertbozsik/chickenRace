@@ -20,8 +20,8 @@ class Game {
     // this.player = new Player();
     this.chicken = new Chicken();
     // worms and foxes will be initialized some seconds later!
-    this.startPicture = loadImage("./assets/start/startpage_2.png");
-    this.finishPicture = loadImage("./assets/gameover/game_over_1.png");
+    this.startPicture = loadImage("assets/start/startpage_2.png");
+    this.finishPicture = loadImage("assets/gameover/game_over_1.png");
   }
 
   // WILL BE CALLED IN function setup(){} IN main.js

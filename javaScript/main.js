@@ -18,7 +18,7 @@ function draw() {
     image(game.startPicture, 0, 0); // the image/picture has to be in the game.js within the initialize function!
     document.querySelector(
       ".text"
-    ).innerHTML = `<h1>chickenRace</h1> <p>Catch the <span>worms</span> and try to avoid the <span>foxes</span> with your chicken.</p> <p>Hit <span id="space">SPACE</span> once to jump, or hit it twice to jump even higher.</p> <p>Hit <span id="enter">ENTER</span> to start the game and have fun! =)</p>`;
+    ).innerHTML = `<h1>chickenRace</h1> <p>Catch the <span>worms</span> and try to avoid the <span>foxes</span> with your chicken.</p> <p>Hit <span id="space">SPACE</span> <span>1x</span> to jump, or hit it <span>2x</span> to jump even higher.</p> <p>Hit <span id="enter">ENTER</span> to start the game and have fun! =)</p> <p class="smallFont"> (This game is dedicated to my friend, Gábor Kiszel.) </p>`;
   } else if (game.started === true && game.finished === false) {
     game.display();
     frameRate(100);
@@ -38,6 +38,7 @@ function keyPressed() {
   let space = 32;
   let enter = 13;
 
+  // the player can jump only twice in a row -> jumpCount is set to 0 if the player hits the ground (this.y = 0 in player.js)
   if (keyCode === space) {
     if (game.chicken.jumpCount <= 1) {
       game.chicken.jump();
@@ -51,6 +52,7 @@ function keyPressed() {
     console.log("the game has just started");
   }
 
+  // reloading the page
   if (keyCode === enter && game.finished === true) {
     window.location.reload();
   }

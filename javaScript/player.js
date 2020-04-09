@@ -42,13 +42,13 @@ class Player {
 class Chicken extends Player {
   constructor() {
     super();
-    this.img = loadImage("./assets/chicken/chicken-vektor2.gif");
+    this.img = loadImage("assets/player/chicken-vektor2.gif");
   }
 }
 
 class Hen extends Player {
   constructor() {
     super();
-    this.img = loadImage(""); // here comes the gif of the hen
+    this.img = loadImage(""); // here should have come the gif of the hen
   }
 }

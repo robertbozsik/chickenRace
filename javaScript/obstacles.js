@@ -46,7 +46,7 @@ class Worm extends Obstacles {
   constructor() {
     super();
     //this.image = game.wormImage;
-    this.image = loadImage("./assets/worm/worm.png");
+    this.image = loadImage("assets/obstacles/worm.png");
   }
 
   display() {
@@ -59,7 +59,7 @@ class Fox extends Obstacles {
   constructor() {
     super();
     // this.image = game.foxImage;
-    this.image = loadImage("./assets/fox/fox.png");
+    this.image = loadImage("assets/obstacles/fox.png");
   }
 
   display() {
