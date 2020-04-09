@@ -2,8 +2,7 @@ console.log("hello from the player");
 
 class Player {
   constructor() {
-    // this.img = loadImage("./assets/chicken/chicken-vektor2.gif");
-    this.gravity = 0.2;
+    this.gravity = 0.2; // if this is 0 the chicken does not fall down after the jump
     this.speed = 0;
     this.jumpCount = 0;
   }
@@ -17,7 +16,7 @@ class Player {
   }
 
   jump() {
-    this.speed = -7; // -7
+    this.speed = -7; // the smaller the number is the bigger the jump is
   }
 
   display() {
@@ -28,12 +27,10 @@ class Player {
     //     this.y = height - this.height;
     // }
 
-    /* new */
     if (this.y >= 300) {
       this.y = 300;
       this.jumpCount = 0;
     }
-    /* new */
 
     image(this.img, this.x, this.y);
   }

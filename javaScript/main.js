@@ -21,10 +21,14 @@ function draw() {
     ).innerHTML = `<h1>chickenRace</h1> <p>Catch the <span>worms</span> and try to avoid the <span>foxes</span> with your chicken.</p> <p>Hit <span id="space">SPACE</span> <span>1x</span> to jump, or hit it <span>2x</span> to jump even higher.</p> <p>Hit <span id="enter">ENTER</span> to start the game and have fun! =)</p> <p class="smallFont"> (This game is dedicated to my friend, Gábor Kiszel.) </p>`;
   } else if (game.started === true && game.finished === false) {
     game.display();
-    frameRate(100);
+    frameRate(100); // (default: 100) the higher the number the faster the game is
     document.querySelector(
       ".text"
     ).innerHTML = `<h1>chickenRace</h1> <h2>score: <span id="score">${game.score}</span></h2> <h2>life: <span id="life">${game.life}</span></h2>`;
+    // SPEED UP LOGIC 2 // DOESN'T PROVIDE BETTER USER EXPERIENCE
+    // if (game.score >= 3) {
+    //   frameRate(600);
+    // }
   } else {
     image(game.finishPicture, 0, 0); // the image/picture has to be in the game.js within the initialize function!
     document.querySelector(

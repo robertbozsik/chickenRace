@@ -66,7 +66,7 @@ class Game {
     //   return true;
     // });
 
-    // if (worm.checkCollision(this.chicken) === true) {
+    // if (worm.checkCollision(this.chicken) === true) { // there is no worm but only worms
     //   this.score += 1;
     // }
 
@@ -74,7 +74,7 @@ class Game {
 
     // adding foxes to the foxes array after a certain time
     if (frameCount % 80 === 0) {
-      // the higher the numer the less worms we have
+      // the higher the numer the less foxes we have (default: 80)
       this.foxes.push(new Fox());
     }
 
@@ -97,6 +97,24 @@ class Game {
     // game over logic
     if (this.life <= 0) {
       this.finished = true;
+    }
+
+    // SPEED UP LOGIC 1 // DOESN'T PROVIDE BETTER USER EXPERIENCE
+    // if (this.score >= 3) {
+    //   this.foxes.forEach((fox) => {
+    //     fox.x -= 7;
+    //   });
+    //   this.worms.forEach((worm) => {
+    //     worm.x -= 5;
+    //   });
+    // }
+
+    // MORE FOXES LOGIC // THIS WORS I THINK
+    if (this.score >= 6) {
+      if (frameCount % 120 === 0) {
+        // the higher the numer the less foxes we have (default: 80)
+        this.foxes.push(new Fox());
+      }
     }
   }
 }

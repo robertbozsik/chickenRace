@@ -17,25 +17,25 @@ class Obstacles {
   // }
 
   checkCollision(player) {
-    let left = this.x;
-    let right = this.x + this.width;
+    let obstacleLeft = this.x;
+    let obstacleRight = this.x + this.width;
 
     let playerLeft = player.x;
     let playerRight = player.x + player.width;
 
     let xCollision =
-      (left > playerLeft && left < playerRight) ||
-      (right > playerLeft && right < playerRight);
+      (obstacleLeft > playerLeft && obstacleLeft < playerRight) ||
+      (obstacleRight > playerLeft && obstacleRight < playerRight);
 
-    let top = this.y;
-    let bottom = this.y + this.height;
+    let obstacleTop = this.y;
+    let obstacleBottom = this.y + this.height;
 
     let playerTop = player.y;
     let playerBottom = player.y + player.height;
 
     let yCollision =
-      (top > playerTop && top < playerBottom) ||
-      (bottom > playerTop && bottom < playerBottom);
+      (obstacleTop > playerTop && obstacleTop < playerBottom) ||
+      (obstacleBottom > playerTop && obstacleBottom < playerBottom);
 
     let collision = xCollision && yCollision;
     return collision;
@@ -45,7 +45,6 @@ class Obstacles {
 class Worm extends Obstacles {
   constructor() {
     super();
-    //this.image = game.wormImage;
     this.image = loadImage("assets/obstacles/worm.png");
   }
 
@@ -58,7 +57,6 @@ class Worm extends Obstacles {
 class Fox extends Obstacles {
   constructor() {
     super();
-    // this.image = game.foxImage;
     this.image = loadImage("assets/obstacles/fox.png");
   }
 
