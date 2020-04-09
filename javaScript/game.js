@@ -22,17 +22,26 @@ class Game {
     // worms and foxes will be initialized some seconds later!
     this.startPicture = loadImage("assets/start/startpage_2.png");
     this.finishPicture = loadImage("assets/gameover/game_over_1.png");
+    this.startingPageSound = loadSound("assets/sounds/startingPageSound.mp3"); // ../ <- this is the way to start the path
+    this.gameStartSound = loadSound("assets/sounds/gameStartSound.mp3");
+    this.wormSound = loadSound("assets/sounds/collisionWithWormSound.mp3");
+    this.foxSound = loadSound("assets/sounds/collisionWithFoxSound3.mp3");
+    this.nextLevelSound = loadSound("assets/sounds/nextLevelSound.mp3"); // DOES NOT WORK! PLAYING IS LOOPED INFINITELY --> lines 125 and 129
+    this.gameOverSound = loadSound("assets/sounds/gameOver.mp3");
   }
 
   // WILL BE CALLED IN function setup(){} IN main.js
   setup() {
     // this.player.setup();
     this.chicken.setup();
+    this.startingPageSound.play();
+    this.startingPageSound.setVolume(0.2);
   }
 
   // WILL BE CALLED IN function draw(){} IN main.js
   display() {
     clear();
+
     this.background.display();
     // this.player.display();
     this.chicken.display();
@@ -53,6 +62,7 @@ class Game {
     this.worms = this.worms.filter((worm) => {
       if (worm.checkCollision(this.chicken)) {
         this.score += 1;
+        this.wormSound.play();
         return false;
       }
       return true;
@@ -88,6 +98,7 @@ class Game {
     this.foxes = this.foxes.filter((fox) => {
       if (fox.checkCollision(this.chicken)) {
         this.life -= 1;
+        this.foxSound.play();
         return false;
       }
       return true;
@@ -109,12 +120,13 @@ class Game {
     //   });
     // }
 
-    // MORE FOXES LOGIC // THIS WORS I THINK
+    // MORE FOXES LOGIC // I THINK IT WORKS BETTER THAN THE SPEED UP
     if (this.score >= 6) {
+      //this.nextLevelSound.play(); // PLAYING IS LOOPED INFINITELY
       if (frameCount % 120 === 0) {
-        // the higher the numer the less foxes we have (default: 80)
         this.foxes.push(new Fox());
       }
+      //this.nextLevelSound.stop();
     }
   }
 }

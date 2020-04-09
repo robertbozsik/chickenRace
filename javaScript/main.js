@@ -35,6 +35,7 @@ function draw() {
     document.querySelector(
       ".text"
     ).innerHTML = `<h2>chickenRace</h2> <h1>GAME OVER!</h1> <p>Your score is: <span id="score">${game.score}</span> point(s)</p> <p>Hit <span id="enter">ENTER</span> to play again</p>`;
+    game.gameOverSound.play();
     noLoop(); // DO I NEED THIS noLoop() HERE?
   }
 }
@@ -55,6 +56,8 @@ function keyPressed() {
 
   if (keyCode === enter) {
     game.started = true;
+    game.startingPageSound.stop();
+    game.gameStartSound.play();
     console.log("the game has just started");
   }
 
