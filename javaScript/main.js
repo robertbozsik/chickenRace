@@ -4,6 +4,7 @@ let game = new Game();
 
 function preload() {
   game.initialize();
+  //soundFormats("mp3"); // isn't needed
 }
 
 function setup() {
@@ -47,6 +48,7 @@ function keyPressed() {
     if (game.chicken.jumpCount <= 1) {
       game.chicken.jump();
       game.chicken.jumpCount++;
+      game.chicken.jumpSound.play();
     }
     console.log("jumpCount:", game.chicken.jumpCount);
   }

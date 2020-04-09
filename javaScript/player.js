@@ -5,6 +5,7 @@ class Player {
     this.gravity = 0.2; // if this is 0 the chicken does not fall down after the jump
     this.speed = 0;
     this.jumpCount = 0;
+    this.jumpSound = loadSound("assets/sounds/jumpSound.mp3");
   }
 
   setup() {
