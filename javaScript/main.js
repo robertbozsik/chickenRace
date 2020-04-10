@@ -4,7 +4,7 @@ let game = new Game();
 
 function preload() {
   game.initialize();
-  //soundFormats("mp3"); // isn't needed
+  soundFormats("mp3"); // isn't needed
 }
 
 function setup() {

@@ -83,7 +83,7 @@ class Game {
     console.log(this.score);
 
     // adding foxes to the foxes array after a certain time
-    if (frameCount % 80 === 0) {
+    if (frameCount % 100 === 0) {
       // the higher the numer the less foxes we have (default: 80)
       this.foxes.push(new Fox());
     }
@@ -120,13 +120,13 @@ class Game {
     //   });
     // }
 
-    // MORE FOXES LOGIC // I THINK IT WORKS BETTER THAN THE SPEED UP
-    if (this.score >= 6) {
-      //this.nextLevelSound.play(); // PLAYING IS LOOPED INFINITELY
-      if (frameCount % 120 === 0) {
-        this.foxes.push(new Fox());
-      }
-      //this.nextLevelSound.stop();
-    }
+    // MORE FOXES LOGIC // I THINK IT WORKS BETTER THAN THE SPEED UP // THE KIDS DON'T LIKE IT SO I TAKE IT OUT
+    // if (this.score >= 6) {
+    //   //this.nextLevelSound.play(); // PLAYING IS LOOPED INFINITELY
+    //   if (frameCount % 120 === 0) {
+    //     this.foxes.push(new Fox());
+    //   }
+    //   //this.nextLevelSound.stop();
+    // }
   }
 }
